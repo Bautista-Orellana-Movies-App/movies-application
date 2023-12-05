@@ -1,0 +1,7 @@
+
+
+.theMovie {
+    justify-content: flex-start;
+    display: flex;
+    width: max-content;
+}
