@@ -2,6 +2,20 @@
 
 import {newMovie, updateMovies, deleteMovie} from "./movies-project-functions.js";
 
+//obtaining the browsers window object and adding an event listener on page load or page refresh
+window.addEventListener('load', () => {
+    const loadMsg = document.getElementById('loading-message');
+    const body = document.getElementById('body');
+    body.style.visibility = "hidden";
+    loadMsg.style.visibility = "visible";
+})
+
+function removeLoader() {
+    const loadMsg = document.getElementById('loading-message');
+    const body = document.getElementById('body');
+    loadMsg.remove()
+    body.style.visibility = "visible";
+}
 
 let html = "";
 const movieId = document.getElementById("movie-selection")
@@ -23,8 +37,17 @@ fetch('http://localhost:3000/movies')
         const movieDiv = document.createElement("div");
         movieDiv.setAttribute('class', "theMovie");
 
+
         // const movieId = document.getElementById("movie-selection")
         movieId.appendChild(movieDiv).innerHTML = html;
+    })
+    .catch(error => {
+        console.log(error);
+        // document.getElementById('movie-selection').innerHTML = `<p style="color:black; font-size: 30px;">Something went wrong</p>`
+
+    })
+    .finally(() => {
+        removeLoader();
     })
 
 const searchBox = document.querySelector('#new-movie');
@@ -34,7 +57,6 @@ searchBox.addEventListener('submit', (e) => {
         const newMovieDiv = document.createElement('div')
         movieId.appendChild(newMovieDiv).innerHTML = `<h4>${searchBox.value}</h4>`
         newMovieDiv.setAttribute('class', 'movie-card')
-
 
 
     }
