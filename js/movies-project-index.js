@@ -1,5 +1,11 @@
 "use strict"
+
+import {newMovie, updateMovies, deleteMovie} from "./movies-project-functions.js";
+
+
 let html = "";
+const movieId = document.getElementById("movie-selection")
+
 fetch('http://localhost:3000/movies')
     .then(response => response.json())
     .then(movies => {
@@ -17,44 +23,23 @@ fetch('http://localhost:3000/movies')
         const movieDiv = document.createElement("div");
         movieDiv.setAttribute('class', "theMovie");
 
-        const movieId = document.getElementById("movie-selection")
-            movieId.appendChild(movieDiv).innerHTML = html;
+        // const movieId = document.getElementById("movie-selection")
+        movieId.appendChild(movieDiv).innerHTML = html;
     })
 
-const newMovie = async (movie) => {
-    try {
-        const url = 'http://localhost:3000/movies';
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(movie)
-        };
-        const response = await fetch(url, options);
-        const newMovie = await response.json();
-        return newMovie;
-    } catch (error) {
-        console.log(error);
+const searchBox = document.querySelector('#new-movie');
+searchBox.addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.target[0].value
+        const newMovieDiv = document.createElement('div')
+        movieId.appendChild(newMovieDiv).innerHTML = `<h4>${searchBox.value}</h4>`
+        newMovieDiv.setAttribute('class', 'movie-card')
+
+
+
     }
-}
-// export const createBook = async (book) => {
-//     try {
-//         const url = 'http://localhost:3000/books';
-//         const options = {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(book)
-//         };
-//         const response = await fetch(url, options);
-//         const newBook = await response.json();
-//         return newBook;
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+)
+
 
 async function startAsyncOperation() {
     // Show loading message
@@ -73,4 +58,5 @@ async function startAsyncOperation() {
     }
 }
 
-// startAsyncOperation()
+
+

@@ -5,3 +5,12 @@
     display: flex;
     width: max-content;
 }
+
+#movie-selection {
+    display: flex;
+}
+
+.mb-3 {
+    width: 20%;
+    max-width: max-content;
+}
