@@ -30,6 +30,9 @@ fetch('http://localhost:3000/movies')
             html += `<div class="movie-card">
             <h4>${movies[i].title}</h4>
             <p>${movies[i].rating}</p>
+            <p>${movies[i].description}</p>
+            <img src=${movies[i].poster}></img>
+            
             </div>`;
 
 

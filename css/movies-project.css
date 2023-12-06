@@ -14,3 +14,16 @@
     width: 20%;
     max-width: max-content;
 }
+
+.movie-card {
+    width: auto;
+    height: 150px;
+    cursor: pointer;
+    background-color: lightsteelblue;
+    border: black solid;
+    margin: 5px;
+
+}
+.theMovie {
+    flex-wrap: wrap;
+}
