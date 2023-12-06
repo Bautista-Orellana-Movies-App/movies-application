@@ -53,32 +53,33 @@ fetch('http://localhost:3000/movies')
 const searchBox = document.querySelector('#new-movie');
 searchBox.addEventListener('submit', (e) => {
         e.preventDefault();
-        e.target[0].value
         const newMovieDiv = document.createElement('div')
-        movieId.appendChild(newMovieDiv).innerHTML = `<h4>${searchBox.value}</h4>`
+        movieId.appendChild(newMovieDiv).innerHTML = `
+        <h4>${e.target[0].value}</h4>
+        <p>${e.target[1].value}</p>
+        <p>${e.target[2].value}</p>
+        <p>${e.target[3].value}</p>
+`
         newMovieDiv.setAttribute('class', 'movie-card')
-
-
     }
 )
 
-
-async function startAsyncOperation() {
-    // Show loading message
-    document.getElementById('loading-message').style.display = 'block';
-    try {
-        // Simulate an asynchronous operation, e.g., fetching data from an API
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        // Perform your asynchronous operation here
-        // Simulate the completion of the asynchronous operation
-        console.log('Async operation completed successfully');
-    } catch (error) {
-        console.error('Async operation failed', error);
-    } finally {
-        // Hide loading message after the asynchronous operation is complete
-        document.getElementById('loading-message').style.display = 'none';
-    }
-}
+// async function startAsyncOperation() {
+//     // Show loading message
+//     document.getElementById('loading-message').style.display = 'block';
+//     try {
+//         // Simulate an asynchronous operation, e.g., fetching data from an API
+//         await new Promise(resolve => setTimeout(resolve, 2000));
+//         // Perform your asynchronous operation here
+//         // Simulate the completion of the asynchronous operation
+//         console.log('Async operation completed successfully');
+//     } catch (error) {
+//         console.error('Async operation failed', error);
+//     } finally {
+//         // Hide loading message after the asynchronous operation is complete
+//         document.getElementById('loading-message').style.display = 'none';
+//     }
+// }
 
 
 
