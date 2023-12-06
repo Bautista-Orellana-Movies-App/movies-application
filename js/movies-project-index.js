@@ -1,6 +1,25 @@
 "use strict"
 
-import {newMovie, updateMovies, deleteMovie} from "./movies-project-functions.js";
+import {createMovie, updateMovies, deleteMovie} from "./movies-project-functions.js";
+
+
+//setting up an event listener for add new movie submit button
+document.getElementById('new-movie').addEventListener('submit', function (event) {
+    event.preventDefault();
+    let movieTitle = document.getElementById('movie-title');
+    let movieRating = document.getElementById('movie-rating');
+    //creating a new movie - img
+    let movieImg = document.getElementById('defaultImg');
+    createMovie({
+        title: movieTitle.value,
+        rating: movieRating.value,
+        poster: movieImg.value
+        // description: ,
+        // poster: ''
+
+    });
+})
+
 
 //obtaining the browsers window object and adding an event listener on page load or page refresh
 window.addEventListener('load', () => {
@@ -20,52 +39,64 @@ function removeLoader() {
 let html = "";
 const movieId = document.getElementById("movie-selection")
 
-fetch('http://localhost:3000/movies')
-    .then(response => response.json())
-    .then(movies => {
-        console.log(movies)
-        for (let i = 0; i < movies.length; i++) {
-            // console.log(movies)
 
-            html += `<div class="movie-card">
+export const loadMovies = () => {
+    fetch('http://localhost:3000/movies')
+        .then(response => response.json())
+        .then(movies => {
+            console.log(movies)
+            for (let i = 0; i < movies.length; i++) {
+                // console.log(movies)
+
+                html += `<div class="movie-card">
             <h4>${movies[i].title}</h4>
             <p>${movies[i].rating}</p>
             <p>${movies[i].description}</p>
-            <img src=${movies[i].poster}></img>
+            <img src=${movies[i].poster} alt="movie-poster">
             
             </div>`;
 
 
-        }
-        const movieDiv = document.createElement("div");
-        movieDiv.setAttribute('class', "theMovie");
+            }
+            const movieDiv = document.createElement("div");
+            movieDiv.setAttribute('class', "theMovie");
 
 
-        // const movieId = document.getElementById("movie-selection")
-        movieId.appendChild(movieDiv).innerHTML = html;
-    })
-    .catch(error => {
-        console.log(error);
-        // document.getElementById('movie-selection').innerHTML = `<p style="color:black; font-size: 30px;">Something went wrong</p>`
+            // const movieId = document.getElementById("movie-selection")
+            movieId.appendChild(movieDiv).innerHTML = html;
+        })
+        .catch(error => {
+            console.log(error);
+            // document.getElementById('movie-selection').innerHTML = `<p style="color:black; font-size: 30px;">Something went wrong</p>`
 
-    })
-    .finally(() => {
-        removeLoader();
-    })
+        })
+        .finally(() => {
+            removeLoader();
+        })
+}
 
-const searchBox = document.querySelector('#new-movie');
-searchBox.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const newMovieDiv = document.createElement('div')
-        movieId.appendChild(newMovieDiv).innerHTML = `
-        <h4>${e.target[0].value}</h4>
-        <p>${e.target[1].value}</p>
-        <p>${e.target[2].value}</p>
-        <p>${e.target[3].value}</p>
-`
-        newMovieDiv.setAttribute('class', 'movie-card')
-    }
-)
+//initial loading of movies
+loadMovies();
+
+//clearing form values
+
+
+
+
+// const searchBox = document.querySelector('#new-movie');
+// searchBox.addEventListener('submit', (e) => {
+//         e.preventDefault();
+//         const newMovieDiv = document.createElement('div')
+//         movieId.appendChild(newMovieDiv).innerHTML = `
+//         <h4>${e.target[0].value}</h4>
+//         <p>${e.target[1].value}</p>
+//         `
+//
+//         newMovieDiv.setAttribute('class', 'movie-card')
+//
+// })
+
+
 
 // async function startAsyncOperation() {
 //     // Show loading message

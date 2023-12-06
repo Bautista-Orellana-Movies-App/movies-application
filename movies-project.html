@@ -23,21 +23,22 @@
     <div id="movie-selection">
     </div>
 
+<!--    Add a movie Form-->
     <h5>Add A Movie</h5>
     <form id="new-movie">
         <div class="mb-3">
-            <label for="movie-form" class="form-label">Movie Title</label>
-            <input type="text" class="form-control" id="movie-form">
-        </div>
-        <div class="mb-3">
-            <label for="movie-genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" id="movie-genre">
+            <label for="movie-title" class="form-label">Movie Title</label>
+            <input type="text" class="form-control" id="movie-title">
         </div>
         <div class="mb-3">
             <label for="movie-rating" class="form-label">Rating</label>
             <input type="text" class="form-control" id="movie-rating">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="mb-3">
+            <input id="defaultImg" value="https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg" style="display: none">
+        </div>
+<!-- submit button for new movie       -->
+        <input type="submit" class="btn btn-primary" id="addMovieBtn" value="submit">
     </form>
 
 

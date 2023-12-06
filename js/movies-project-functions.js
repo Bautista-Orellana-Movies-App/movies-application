@@ -1,4 +1,13 @@
-export const newMovie = async (movie) => {
+import { loadMovies} from "./movies-project-index.js";
+
+function clearForm() {
+    let clearMovieTitle = document.getElementById('movie-title')
+    let movieRating = document.getElementById('movie-rating');
+    clearMovieTitle.value = '';
+    movieRating.value = '';
+}
+
+export const createMovie = async (movie) => {
     try {
         const url = 'http://localhost:3000/movies';
         const options = {
@@ -9,10 +18,13 @@ export const newMovie = async (movie) => {
             body: JSON.stringify(movie)
         };
         const response = await fetch(url, options);
-        const newMovie = await response.json();
-        return newMovie;
+        return await response.json();
     } catch (error) {
         console.log(error);
+    }
+    finally {
+        loadMovies()
+        clearForm()
     }
 }
 
