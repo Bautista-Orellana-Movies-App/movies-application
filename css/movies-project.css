@@ -1,13 +1,14 @@
 
-
 .theMovie {
     justify-content: flex-start;
     display: flex;
     width: max-content;
+    flex-wrap: wrap;
 }
 
 #movie-selection {
     display: flex;
+    width: 100%;
 }
 
 .mb-3 {
@@ -16,59 +17,30 @@
 }
 
 .movie-card {
-    width: auto;
-    height: 150px;
+    height: auto;
     cursor: pointer;
     background-color: lightsteelblue;
     border: black solid;
     margin: 5px;
+    min-width: min-content;
+    flex-flow: column;
+    display: inline-flex;
+    align-items: flex-start;
+
 
 }
+
 .theMovie {
     flex-wrap: wrap;
-}
-
-.theMovie {
     justify-content: flex-start;
     display: flex;
     width: min-content;
 }
 
-#movie-selection {
-    display: flex;
+img {
+    height: auto;
+    width: 150px;
 }
-
-.mb-3 {
-    width: 20%;
-    max-width: max-content;
-}
-
-.movie-card {
-    width: auto;
-    height: 150px;
-    cursor: pointer;
-    background-color: lightsteelblue;
-    border: black solid;
-    margin: 5px;
-    display: inline-flex;
-
-}
-.theMovie {
-    flex-wrap: wrap;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

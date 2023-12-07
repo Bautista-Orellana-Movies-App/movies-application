@@ -28,51 +28,67 @@ const loadMovies = () => {
         .then(response => response.json())
         .then(movies => {
             console.log(movies)
-            let moviesHTML = movies.map( movie => {
+            let moviesHTML = movies.map(movie => {
                 return `<div class="movie-card">
                     <h4>${movie.title}</h4>
-                    <p>${movie.rating}</p>
-                    <p>${movie.description}</p>
                     <img src=${movie.poster} alt="movie-poster">
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                    <button type="submit" class="delete-btn btn btn-danger" data-movie-id="${movie.id}">Delete</button>
+                    <p>${movie.rating}</p>
+                    <p>${movie.year}</p>
+                    <p>${movie.description}</p>
+                    <p>${movie.genre}</p>
+                    <button type="button" class="btn btn-primary edit-button" id="Edit${movie.id}">Edit</button>
+                    <button type="button" class="delete-btn btn btn-danger dltBtn" id="${movie.id}">Delete</button>
 
                     </div>`;
             })
 
             const movieId = document.getElementById("movie-selection")
             movieId.innerHTML = moviesHTML;
+            deleteButtons()
+            editButtons()
+            removeLoader();
 
         })
         .catch(error => {
             console.log(error);
             // document.getElementById('movie-selection').innerHTML = `<p style="color:black; font-size: 30px;">Something went wrong</p>`
-        })
-        .finally(() => {
             removeLoader();
+
         })
 }
+
 
 function deleteButtons() {
 //event listener for "delete" button in load movies function
-    const deleteButtons = document.querySelectorAll('.delete-btn');
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const movieId = button.getAttribute('data-movie-id');
-            deleteMovie(movieId)
-        })
-    })
-}
-
-// event listener for the "Edit" button in loadMovies function
-function editMovies() {
-    const editButtons = document.querySelectorAll('.edit-button');
-    editButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const movieId = button.getAttribute('data-movie-id');
-            editMovie(movieId);
+    const deleteBtns = document.querySelectorAll('.dltBtn');
+// console.log(deleteBtns);
+    deleteBtns.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // console.log(e)
+            // console.log(e.target.attributes.id.value)
+            let movieID = e.target.attributes.id.value
+            // const movieId = button.getAttribute('id');
+            deleteMovie(movieID);
         });
     });
+}
+
+//
+const deleteMovie = async (id) => {
+    try {
+        const url = `http://localhost:3000/movies/${id}`;
+        const options = {
+            method: 'DELETE'
+        };
+        const response = await fetch(url, options);
+        const deletedMovie = await response.json()
+        // return response.json();
+        // return deletedMovie;
+    } catch (error) {
+        console.error(error);
+    } finally {
+        loadMovies()
+    }
 }
 
 function clearForm() {
@@ -81,7 +97,6 @@ function clearForm() {
     clearMovieTitle.value = '';
     movieRating.value = '';
 }
-
 
 
 const createMovie = async (movie) => {
@@ -96,9 +111,7 @@ const createMovie = async (movie) => {
         };
         const response = await fetch(url, options);
 
-
         clearForm();
-
 
     } catch (error) {
         console.log(error);
@@ -107,7 +120,6 @@ const createMovie = async (movie) => {
 
     }
 }
-
 
 
 //setting up an event listener for add new movie submit button
@@ -128,7 +140,25 @@ document.getElementById('new-movie').addEventListener('submit', function (event)
 
 })
 
-const updateMovies = async (id, movie) => {
+// ======WORKING ON BELOW========
+
+//                     <button type="button" class="btn btn-primary">Edit</button>
+
+// event listener for the "Edit" button in loadMovies function
+function editButtons() {
+    const editBtns = document.querySelectorAll('.edit-button');
+    editBtns.forEach(button => {
+        button.addEventListener('click', (e) => {
+            console.log(e)
+            let movieId = e.target.attributes.id.value
+            console.log(e.target.attributes.id.value)
+            editMovies(movieId);
+        });
+    });
+}
+
+
+const editMovies = async (id, movie) => {
     try {
         const url = `http://localhost:3000/movies/${id}`;
         const options = {
@@ -139,8 +169,7 @@ const updateMovies = async (id, movie) => {
             body: JSON.stringify(movie)
         };
         const response = await fetch(url, options);
-        const updatedMovie = await response.json();
-        return updatedMovie;
+        return await response.json();
     } catch (error) {
         console.error(error);
     } finally {
@@ -148,27 +177,7 @@ const updateMovies = async (id, movie) => {
     }
 }
 
-
-const deleteMovie = async (id) => {
-    try {
-        const url = `http://localhost:3000/movies/${id}`;
-        const options = {
-            method: 'DELETE'
-        };
-        const response = await fetch(url, options);
-        const deletedMovie = await response.json();
-
-        // await loadMovies();
-
-        console.log(`Movie with ID ${id} deleted:`)
-
-    } catch (error) {
-        console.error(error);
-    } finally {
-
-    }
-}
 
 export {
-    loaderAnimation, loadMovies, createMovie, updateMovies, deleteMovie, deleteButtons
+    loaderAnimation, loadMovies, createMovie, editMovies, deleteMovie,
 }

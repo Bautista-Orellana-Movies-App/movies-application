@@ -89,18 +89,6 @@
       "genre": "Adventure, Drama, Fantasy",
       "description": "King Arthur's headstrong nephew embarks on a daring quest to confront the Green Knight, a mysterious giant who appears at Camelot. Risking his head, he sets off on an epic adventure to prove himself before his family and court.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMjMxNTdiNWMtOWY0My00MjM4LTkwNzMtOGI0YThhN2Q4M2I4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-    },
-    {
-      "title": "revenge of the sith",
-      "rating": "9",
-      "poster": "https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg",
-      "id": 11
-    },
-    {
-      "title": "attack of the clones",
-      "rating": "6",
-      "poster": "https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg",
-      "id": 12
     }
   ]
 }
