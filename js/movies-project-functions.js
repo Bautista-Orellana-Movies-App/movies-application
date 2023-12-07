@@ -39,21 +39,6 @@ const loadMovies = () => {
 
                     </div>`;
             })
-            // for (let i = 0; i < movies.length; i++) {
-                // console.log(movies)
-                // html += `<div class="movie-card">
-                //     <h4>${movies[i].title}</h4>
-                //     <p>${movies[i].rating}</p>
-                //     <p>${movies[i].description}</p>
-                //     <img src=${movies[i].poster} alt="movie-poster">
-                //     <button type="submit" class="btn btn-primary">Edit</button>
-                //     <button type="submit" class="delete-btn btn btn-danger" data-movie-id="${movies[i].id}">Delete</button>
-                //
-                //     </div>`;
-            // }
-
-            // const movieDiv = document.createElement("div");
-            // movieDiv.setAttribute('class', "theMovie");
 
             const movieId = document.getElementById("movie-selection")
             movieId.innerHTML = moviesHTML;
@@ -185,5 +170,5 @@ const deleteMovie = async (id) => {
 }
 
 export {
-    loaderAnimation, loadMovies, updateMovies, deleteMovie, createMovie
+    loaderAnimation, loadMovies, createMovie, updateMovies, deleteMovie, deleteButtons
 }
