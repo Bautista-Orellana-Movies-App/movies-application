@@ -12,7 +12,7 @@ import {loadMovies, deleteButtons, loaderAnimation} from "./movies-project-funct
     loaderAnimation()
     //initial loading of movies
     await loadMovies();
-    deleteButtons()
+    await deleteButtons()
 
 })();
 

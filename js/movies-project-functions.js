@@ -1,6 +1,6 @@
 "use strict"
 
-// OBTAINING THE BROWSER WINDOW OBJECT AND ADDING AN EVENT LISTENER ON PAGE LOAD OR PAGE REFRESH
+// ADDING AN EVENT LISTENER ON PAGE LOAD/REFRESH
 function loaderAnimation() {
     window.addEventListener('load', () => {
         const loadMsg = document.getElementById('loading-message');
@@ -20,9 +20,8 @@ function removeLoader() {
 }
 
 
-// // IMPORTED FUNCTION TO LOAD AVAILABLE MOVIE SELECTION FROM DATABASE
+// IMPORT FUNCTION TO LOAD AVAILABLE MOVIE SELECTION FROM DATABASE
 const loadMovies = () => {
-    // let html = '';
 
     fetch('http://localhost:3000/movies')
         .then(response => response.json())
@@ -61,12 +60,9 @@ const loadMovies = () => {
             </div>
         </div>
     </div>
-</div><!-- ... (existing modal content) ... -->
+</div>
 
-
-
-                     <!-- EDIT FORM -->
-<!-- EDIT FORM -->
+<!-- EDIT FORM STARTS HERE-->
 <div class="modal-footer" style="display: none;" id="editForm-${movie.id}">
     <form id="editMovieForm" data-movie-id="${movie.id}">
         <div class="mb-3">
@@ -79,20 +75,17 @@ const loadMovies = () => {
         </div>
         <div class="mb-3">
             <label for="edit-movie-rating" class="form-label">Rating</label>
-            <!-- ADDING ATTRIBUTE NAME BESIDE THE FIELD -->
+            
             <div class="input-group">
                 <input type="text" class="form-control" id="edit-movie-rating" value="${movie.rating}">
                 <span class="input-group-text">Rating</span>
             </div>
-        </div>
-        <!-- ADD SIMILAR INPUT FIELDS FOR OTHER ATTRIBUTES -->
+        </div>  
 
         <button type="button" class="btn btn-primary save-edit-button">Save Changes</button>
         <button type="button" class="btn btn-secondary cancel-edit-button">Cancel</button>
     </form>
 </div>
-
-
 `; //     COMMA KEPT SHOWING UP SO HAD TO JOIN TO REMOVE
             }).join('');
 
@@ -121,11 +114,12 @@ async function deleteButtons() {
 
 
             // HIDE THE MODAL
+
             const modalId = e.target.getAttribute('data-bs-target');
             const modalElement = document.querySelector(modalId);
             const modal = new bootstrap.Modal(modalElement);
             modal.remove();
-            // Manually remove the modal backdrop
+            // REMOVE MODAL
             const modalBackdrop = document.querySelector('.modal-backdrop');
             modalBackdrop.hide();
         });

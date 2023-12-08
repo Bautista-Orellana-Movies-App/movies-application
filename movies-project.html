@@ -9,7 +9,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Your other CSS files -->
     <link href="css/movies-project.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +18,7 @@
 </head>
 <body id="body">
 <div id="container">
-
+<!--NAVBAR THAT CONTAINS A QUOTE AND LINKS-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><h1>Groovy Movie</h1></a>
@@ -53,10 +52,12 @@
             </div>
         </div>
     </nav>
+<!--    LOADING MESSAGE ALSO CONTAINS A QUOTE AND ANIMATION EFFECT ACROSS SCREEN-->
     <div id="loading-message">
 
         <figure>
             <blockquote class="blockquote">
+                <h1 id="now-loading">LOADING...</h1>
                 <h4>Good movies are worth the wait, y'all!</h4>
             </blockquote>
             <h5>
@@ -68,13 +69,13 @@
 
     </div>
 </div>
-
+<!--DIV WHERE MOVIES WILL POPULATE WHEN LOADED AND ADDED-->
 <div id="movie-selection">
 
 </div>
 
-<!--    Add a movie Form-->
-<h5>Add A Movie</h5>
+<!--FORM TO ADD A MOVIE WITH A TITLE AND RATING-->
+<h5 class="form-label">Add A Movie</h5>
 <form id="new-movie">
     <div class="mb-3">
         <label for="movie-title" class="form-label">Movie Title</label>
@@ -84,23 +85,22 @@
         <label for="movie-rating" class="form-label">Rating</label>
         <input type="text" class="form-control" id="movie-rating">
     </div>
+
     <div class="mb-3">
         <label for="defaultImg"></label>
         <input id="defaultImg" value="https://www.vinelanddriveintheater.com/assets/front/images/comingSoon.jpg"
                style="display: none">
     </div>
-    <!-- submit button for new movie       -->
+
     <input type="submit" class="btn btn-primary" id="addMovieBtn" value="submit">
 </form>
 
 
-<!-- Bootstrap JavaScript -->
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-<!-- Your other JavaScript files -->
 <script type="module" src="js/movies-project-index.js"></script>
 </body>
 </html>
