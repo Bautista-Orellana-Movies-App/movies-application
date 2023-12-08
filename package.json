@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "db": "json-server -d1200 --watch data/movies.json"
+    "db": "json-server -d2400 --watch data/movies.json"
   }
 }

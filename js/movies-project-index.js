@@ -1,6 +1,6 @@
 "use strict"
 
-import {loadMovies, loaderAnimation} from "./movies-project-functions.js";
+import {loadMovies, deleteButtons, loaderAnimation} from "./movies-project-functions.js";
 
 
 
@@ -12,8 +12,7 @@ import {loadMovies, loaderAnimation} from "./movies-project-functions.js";
     loaderAnimation()
     //initial loading of movies
     await loadMovies();
-    // deleteButtons()
-        // deleteMovie()
+    deleteButtons()
 
 })();
 

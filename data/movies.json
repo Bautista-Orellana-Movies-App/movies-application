@@ -1,22 +1,7 @@
 {
   "movies": [
     {
-      "id": 1,
-      "title": "Shrek",
-      "year": "2001",
-      "rating": "PG",
-      "genre": "Animation, Adventure, Comedy",
-      "description": "Once upon a time, in a far away swamp, there lived an ogre named Shrek (Mike Myers) whose precious solitude is suddenly shattered by an invasion of annoying fairy tale characters. They were all banished from their kingdom by the evil Lord Farquaad (John Lithgow). Determined to save their home -- not to mention his -- Shrek cuts a deal with Farquaad and sets out to rescue Princess Fiona (Cameron Diaz) to be Farquaad's bride. Rescuing the Princess may be small compared to her deep, dark secret.",
-      "poster": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX380_CR0,2,380,562_.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Goodfellas",
-      "year": "1990",
-      "rating": "R",
-      "genre": "biography, Crime, Drama",
-      "description": "A young man grows up in the mob and works very hard to advance himself through the ranks. He enjoys his life of money and luxury, but is oblivious to the horror that he causes. A drug addiction and a few mistakes ultimately unravel his climb to the top. Based on the book \"Wiseguy\"",
-      "poster": "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
+      "id": 2
     },
     {
       "id": 3,
@@ -52,7 +37,7 @@
       "rating": "PG",
       "genre": "Adventure, Drama, History",
       "description": "This Hollywood drama is based on the events of the Apollo 13 lunar mission, astronauts Jim Lovell (Tom Hanks), Fred Haise (Bill Paxton) and Jack Swigert (Kevin Bacon) find everything going according to plan after leaving Earth's orbit. However, when an oxygen tank explodes, the scheduled moon landing is called off. Subsequent tensions within the crew and numerous technical problems threaten both the astronauts' survival and their safe return to Earth.",
-      "poster":"https://m.media-amazon.com/images/M/MV5BMjc4MzZlNmQtN2ZlOS00OGQzLWI5YjEtNDQ2YmZlN2FjNTIxXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjc4MzZlNmQtN2ZlOS00OGQzLWI5YjEtNDQ2YmZlN2FjNTIxXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"
     },
     {
       "id": 7,
