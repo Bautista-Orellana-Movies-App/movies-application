@@ -47,7 +47,7 @@ const loadMovies = () => {
             <div class="modal-body d-flex">
                 <img src="${movie.poster}" class="card-img-top" alt="${movie.title} Poster" style="width: 150px;">
                 <div class="ms-3">
-                    <p class="card-text">${movie.description}</p>
+                    <p class="card-text" id="user-edit-desc">${movie.description}</p>
                     <p class="card-text">Rating: ${movie.rating}</p>
                     <p class="card-text">Year: ${movie.year}</p>
                     <p class="card-text">Genre: ${movie.genre}</p>
@@ -226,13 +226,14 @@ function editButtons() {
         button.addEventListener('click', (e) => {
             const movieId = e.target.closest('form').dataset.movieId;
             // Call a function to handle saving changes
-            saveEditChanges(movieId);
+            editMovies(movieId)
+            loadMovies();
         });
     });
 }
 
 // EDIT MOVIES FUNCTION
-const editMovies = async (id, movie) => {
+const editMovies = async (id) => {
     try {
         const url = `http://localhost:3000/movies/${id}`;
         const options = {
@@ -240,7 +241,10 @@ const editMovies = async (id, movie) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(movie)
+            body: JSON.stringify({
+                id: id,
+                description: document.getElementById('user-edit-desc').value
+            })
         };
         const response = await fetch(url, options);
         return await response.json();
