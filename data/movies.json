@@ -19,15 +19,6 @@
       "poster": "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
     },
     {
-      "id": 3,
-      "title": "Pandorum",
-      "year": "2009",
-      "rating": "R",
-      "genre": "Action, Horror, Mystery",
-      "description": "Astronauts Payton (Dennis Quaid) and Bower (Ben Foster) awake in a hypersleep chamber with no memory of who they are or what their mission might be. While Payton stays behind to monitor the radio transmitter, Bower ventures out of the chamber into the seemingly abandoned spaceship.",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNDQxNjc5NTMxNl5BMl5BanBnXkFtZTcwNjg2NDE4Mg@@._V1_.jpg"
-    },
-    {
       "id": 4,
       "title": "Casino",
       "year": "1995",
@@ -52,7 +43,7 @@
       "rating": "PG",
       "genre": "Adventure, Drama, History",
       "description": "This Hollywood drama is based on the events of the Apollo 13 lunar mission, astronauts Jim Lovell (Tom Hanks), Fred Haise (Bill Paxton) and Jack Swigert (Kevin Bacon) find everything going according to plan after leaving Earth's orbit. However, when an oxygen tank explodes, the scheduled moon landing is called off. Subsequent tensions within the crew and numerous technical problems threaten both the astronauts' survival and their safe return to Earth.",
-      "poster":"https://m.media-amazon.com/images/M/MV5BMjc4MzZlNmQtN2ZlOS00OGQzLWI5YjEtNDQ2YmZlN2FjNTIxXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjc4MzZlNmQtN2ZlOS00OGQzLWI5YjEtNDQ2YmZlN2FjNTIxXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg"
     },
     {
       "id": 7,
@@ -71,15 +62,6 @@
       "genre": "Comedy, Sport",
       "description": "NASCAR superstar Ricky Bobby (Will Ferrell) is at the top of his game; adored by fans, a trophy wife by his side, and incredible wealth. But Ricky loses it all when French Formula One champion Jean Girard (Sacha Baron Cohen) roars onto the scene. Ricky, with the help of his ruthless father, must pull himself out of the depths of despair and restore his honor on the racetrack.",
       "poster": "https://m.media-amazon.com/images/M/MV5BNzAzOTk1OTIyM15BMl5BanBnXkFtZTcwNDIzNTQzMQ@@._V1_.jpg"
-    },
-    {
-      "id": 9,
-      "title": "Interstellar",
-      "year": "2014",
-      "rating": "PG-13",
-      "genre": "Adventure, Drama, Sci-Fi",
-      "description": "In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole. But first, Brand must send former NASA pilot Cooper (Matthew McConaughey) and a team of researchers through the wormhole and across the galaxy to find out which of three planets could be mankind's new home.",
-      "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     },
     {
       "id": 10,
