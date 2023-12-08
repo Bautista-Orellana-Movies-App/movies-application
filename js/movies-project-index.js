@@ -4,6 +4,8 @@ import {loadMovies, loaderAnimation} from "./movies-project-functions.js";
 
 
 
+// Usage example
+
 
 (async () => {
 
@@ -12,11 +14,6 @@ import {loadMovies, loaderAnimation} from "./movies-project-functions.js";
     await loadMovies();
     // deleteButtons()
         // deleteMovie()
-
-
-
-
-
 
 })();
 
